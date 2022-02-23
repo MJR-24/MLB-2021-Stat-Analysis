@@ -1,19 +1,7 @@
 names(RF_Leaderboard)[names(RF_Leaderboard) == "ï..Name"] <- "Name"
 
-head(RF_Leaderboard, 10)
 write.table(RF_Leaderboard, "clipboard", sep = "\t", row.names = FALSE)
 attach(RF_Leaderboard)
-
-# Calculate TB
-RF_Leaderboard$TB <- (RF_Leaderboard["X1B"])+(2*RF_Leaderboard["X2B"])+
-  (3*RF_Leaderboard["X3B"])+(4*RF_Leaderboard["HR"])
-
-# Calculate SecA
-RF_Leaderboard$SecA <- (RF_Leaderboard["BB"] + (RF_Leaderboard["TB"] - 
-                                                  RF_Leaderboard["H"]) + 
-                          (RF_Leaderboard["SB"] - RF_Leaderboard["CS"])) / 
-  RF_Leaderboard["AB"]
-
 
 # LEADERBOARDS ###############################################################
 
@@ -76,3 +64,5 @@ write.table(RF_wRC_10, "clipboard", sep = "\t", row.names = FALSE)
 RF_WAR <- RF_Leaderboard[order(WAR, decreasing = TRUE), c("Name", "WAR")]
 RF_WAR_10 <- head(RF_WAR, 10)
 write.table(RF_WAR_10, "clipboard", sep = "\t", row.names = FALSE)
+
+sum(RF_Leaderboard$WAR)

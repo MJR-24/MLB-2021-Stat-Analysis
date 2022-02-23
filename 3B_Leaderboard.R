@@ -65,4 +65,4 @@ ThirdB_WAR <- ThirdB_Leaderboard[order(WAR, decreasing = TRUE), c("Name", "WAR")
 ThirdB_WAR_10 <- head(ThirdB_WAR, 10)
 write.table(ThirdB_WAR_10, "clipboard", sep = "\t", row.names = FALSE)
 
-
+sum(ThirdB_Leaderboard$WAR)

@@ -1,7 +1,5 @@
 names(C_Leaderboard)[names(C_Leaderboard) == "ï..Name"] <- "Name"
 
-head(C_Leaderboard, 10)
-
 attach(C_Leaderboard)
 
 # LEADERBOARDS ###############################################################
@@ -66,4 +64,4 @@ C_WAR <- C_Leaderboard[order(WAR, decreasing = TRUE), c("Name", "WAR")]
 C_WAR_15 <- head(C_WAR, 15)
 write.table(C_WAR_15, "clipboard", sep = "\t", row.names = FALSE)
 
-
+sum(C_Leaderboard$WAR)
